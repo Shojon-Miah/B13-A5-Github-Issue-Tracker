@@ -11,14 +11,79 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Google Font -->
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 
 
 </head>
 
-<body>
+<body class="min-h-screen flex items-center justify-center bg-gray-100">
 
-    <h1 class="text-8xl py-10">Login Page</h1>
+    <div class="bg-white p-10 rounded-xl shadow-md w-[400px]">
+
+        <!-- logo -->
+        <div class="flex justify-center mb-4">
+            <img src="./assets/github-logo.png" alt="GitHub Logo" class="w-25">
+        </div>
+
+        <!-- Title  -->
+        <h1 class="text-2xl font-semibold text-center mb-2">
+            GitHub Issues Tracker
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-center text-gray-500 mb-6">
+            Sign in to manage your issues
+        </p>
+
+        <!-- Login Form  -->
+        <form id="login-form" class="space-y-4">
+           
+            <div>
+                <label class="block text-sm font-medium mb-1">
+                    Username
+                </label>
+
+                <input id="username-input" type="text" placeholder="Enter Username" class="input input-bordered w-full">
+
+            </div>
+            <!-- Password  -->
+            <div>
+                <label class="block text-sm font-medium mb-1">
+                    Password
+                </label>
+
+                <input id="password-input" type="password" placeholder="Enter Password" class="input input-bordered w-full">
+            </div>
+            
+            <!--Sign In Button -->
+            <button type="submit" class="btn btn-primary w-full">
+                Sign In
+            </button>
+
+        </form>
+
+        <!-- OR divider -->
+         <div class="flex items-center gap-3 my-6">
+            <div class="flex-1 border-t"></div>
+            <span class="text-sm text-gray-400">OR</span>
+            <div class="flex-1 border-t"></div>
+         </div>
+
+        <!-- Demo Credentials -->
+         <div class="text-sm text-gray-400">
+            <p class="font-medium text-center mb-2">Demo Credentials:</p>
+
+            <p class="text-center text-gray-700">
+                Username: <span class="font-semibold">admin</span>
+            </p>
+
+            <p class="text-center text-gray-700">
+                Password: <span class="font-semibold">admin123</span>
+            </p>
+
+         </div>
+        
+    </div>
 
     <script src="./scripts/login.js"></script>
 
