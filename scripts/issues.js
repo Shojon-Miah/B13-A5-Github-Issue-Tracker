@@ -1,9 +1,8 @@
 // issue loading, card rendering, modal logic will be implimented here
 
-// Loading All Issues= > API Fetch
+// Loading All Issues from API
 
-
-// Dynamic Issues Card Render
+// Dynamic Loading Issues and Card Render
 
 
 async function loadIssues () {
@@ -14,6 +13,7 @@ async function loadIssues () {
         // console.log(result);
         
         const issues = result.data;
+        document.getElementById("issue-count").innerText = issues.length;
         const container = document.getElementById("issues-container");
 
         container.innerHTML = "";
@@ -56,3 +56,4 @@ async function loadIssues () {
 }
 
 loadIssues();
+
