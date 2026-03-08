@@ -9,6 +9,9 @@
     <!-- daisyiu + tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -34,7 +37,13 @@
             <div class="flex items-center gap-2">
                 <input id="search-input" type="text" placeholder="Search issues...." class="input input-bordered w-64">
 
-                <button id="search-button" class="btn btn-primary">
+                <button 
+                    id="search-button" 
+                    class="btn btn-primary flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i>
+
+                     <!-- plus Icon -->
+
                     New Issue
                 </button>
 
@@ -43,6 +52,28 @@
         </div>
 
     </nav>
+
+    <!-- Tab Section -->
+
+    <!-- Issues section -->
+     <section class="max-w-7xl mx-auto px-6 mt-8">
+        <!-- tabs -->
+        <div class="flex items-center gap-4 mb-6">
+
+            <button id="tab-all" class="btn btn-sm btn-primary">
+                All
+            </button>
+
+            <button id="tab-open" class="btn btn-sm text-gray-500 border-gray-300 btn-outline">
+                Open
+            </button>
+
+            <button id="tab-closed" class="btn btn-sm border-gray-200 text-gray-500 btn-outline">
+                Closed
+            </button>
+
+        </div>
+     </section>
     
     <script src="./scripts/issues.js"></script>
     <script src="./scripts/search.js"></script>
