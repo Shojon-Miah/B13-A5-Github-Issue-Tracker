@@ -23,8 +23,12 @@ loadIssues();
 // Render function 
 
 function renderIssues(issues) {
-
+    
     const container = document.getElementById("issues-container");
+
+    // dynamic issue count 
+    document.getElementById("issue-count").innerText = issues.length;
+
 
     container.innerHTML = "";
 
@@ -78,21 +82,49 @@ function renderIssues(issues) {
 
 }
 
+//  Tab activity function 
 
-// Filter logic
+function setActiveTab(activeTabId){
+
+    const tabs = ["tab-all", "tab-open", "tab-closed"];
+
+    tabs.forEach(id => {
+        const tab = document.getElementById(id);
+
+        tab.classList.remove("btn-primary");
+        tab.classList.add("btn-outline", "text-gray-500");
+    });
+
+
+    const activeTab = document.getElementById(activeTabId);
+    
+    activeTab.classList.remove("btn-outline", "text-gray-500");
+    activeTab.classList.add("btn-primary");
+} 
+
+
+
+// All Tab 
 
 document.getElementById("tab-all").addEventListener("click", () => {
     renderIssues(allIssues);
+    setActiveTab("tab-all");
 });
 
+// Open Tab
 document.getElementById("tab-open").addEventListener("click", () => {
     const openIssues = allIssues.filter(issue => issue.status === "open");
+
     renderIssues(openIssues);
+    setActiveTab("tab-open"); 
 });
 
+//Closed Tab 
 document.getElementById("tab-closed").addEventListener("click", () => {
     const closedIssues = allIssues.filter(issue => issue.status === "closed");
+
     renderIssues(closedIssues);
+    setActiveTab("tab-closed"); 
 });
 
 
