@@ -78,8 +78,7 @@
 
                 <div class="flex items-center gap-2">
 
-                    <img src="./assets/Aperture.png" 
-                        alt="Issue Icon" class="w-6 h-6">
+                    <img src="./assets/Aperture.png" alt="Issue Icon" class="w-6 h-6">
 
                     <div>
                         <p class="text-sm font-medium">
@@ -108,49 +107,57 @@
 
             </div>
 
+
+            <!-- Spinner HTML add -->
+
+            <div id="loading-spinner" class="flex justify-center py-10 hidden">
+
+                <span class="loading loading-spinner loading-lg text-primary"></span>
+
+            </div>
+            
             <!-- Dynamic Issues Card Render-->
 
-            <div id="issues-container" 
-                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
 
-             </div>
+            </div>
 
         </div>
 
 
     </section>
 
- <!-- Add Modal -->
+    <!-- Add Modal -->
 
-<dialog id="issue-modal" class="modal">
+    <dialog id="issue-modal" class="modal">
 
-    <div class="modal-box">
-        <h3 id="modal-title" class="text-lg font-bold mb-2"></h3>
+        <div class="modal-box">
+            <h3 id="modal-title" class="text-lg font-bold mb-2"></h3>
 
-        <p id="modal-description" class="text-sm text-gray-600 mb-4"></p>
+            <p id="modal-description" class="text-sm text-gray-600 mb-4"></p>
 
-        <div class="space-y-2 text-sm">
+            <div class="space-y-2 text-sm">
 
-            <p><strong>Status:</strong> <span id="modal-status"></span></p>
-            <p><strong>Author:</strong> <span id="modal-author"></span></p>
-            <p><strong>Priority:</strong> <span id="modal-priority"></span></p>
-            <p><strong>Created:</strong> <span id="modal-created"></span></p>
-            <p><strong>Assignee:</strong> <span id="modal-assignee"></span></p>
+                <p><strong>Status:</strong> <span id="modal-status"></span></p>
+                <p><strong>Author:</strong> <span id="modal-author"></span></p>
+                <p><strong>Priority:</strong> <span id="modal-priority"></span></p>
+                <p><strong>Created:</strong> <span id="modal-created"></span></p>
+                <p><strong>Assignee:</strong> <span id="modal-assignee"></span></p>
+
+            </div>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
 
         </div>
 
-        <div class="modal-action">
-            <form method="dialog">
-                <button class="btn">Close</button>
-            </form>
-        </div>        
+    </dialog>
 
-    </div>
 
-</dialog>
-
-    
 
     <script src="./scripts/issues.js"></script>
     <script src="./scripts/search.js"></script>
@@ -158,5 +165,3 @@
 </body>
 
 </html>
-
-
