@@ -1,129 +1,54 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
 
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
+## What is the difference between var, let, and const?
 
----
+These are three different keywords for declaring variables in JavaScript. 
 
-# Assignment-05: GitHub Issues Tracker
+var: It is function-scoped and can be declared repeatedly with the same name. It supports "Hoisting".
 
+let: It is block-scoped (works inside { }). It cannot be declared again with the same name in the same block, but its value can be changed.
 
-### **API Endpoints:**
-###  **All Issues:** 
-  - https://phi-lab-server.vercel.app/api/v1/lab/issues 
+const: It is also block-scoped, but its value cannot be changed (re-assigned) once it is set.
 
+## What is the spread operator (...)?
 
-###  **Single Issue:**
-   - https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}
+ Definition: This operator, written with three dots (...), helps to extract the elements inside an array or object separately.
+ 
+ It is mainly used for copying or merging data, which cannot be easily done with the normal assignment operator.
 
-   - Example: https://phi-lab-server.vercel.app/api/v1/lab/issue/33
-
-
-###  **Search Issue:** https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}
-
-   - Example:  https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=notifications
+# Why is it used for: 
+•	To copy the elements of one array to another array.
+•	To merge multiple arrays or objects.
+•	To send a list as an argument to a function.
 
 
----
+## What is the difference between map(), filter(), and forEach()?
 
-## 📝 Main Requirements
+ Difference between map(), filter(), and forEach()
+ 
+ Definition: These are JavaScript array methods that are used as an alternative to loops.
 
-## 🎨 Design Part
+ Difference: 
+# forEach(): It only operates on each item in the array, but does not return a new array.
+ 
+ # map(): It operates on each item and creates a new array and returns it.
 
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
+# filter(): It selects some items based on a specific  condition and returns a new array.
 
-## Main Page: 
+ Why to use: They are essential for data processing. You use filter() when you want to separate certain data from a list, and use map() when you want to change each data in the list and want a new list.
 
-### Navbar: 
+## What is an arrow function?
 
-- Navbar with website logo/name on the left
-- Search input and button on the right
+ Definition: This is a short and modern way of writing simple functions. It takes less code to write than a simple function. Also, it does not have its own this keyword, which makes it easier to handle code in complex applications.
 
-### Tab Section like Figma: 
+ For example: const add = (a, b) => a + b;
 
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
+ Why is it used for: It is used to make the code clean and readable. Arrow functions are especially popular as callback functions.
 
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
+## What are template literals?
 
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
+  Definition: The method of writing a string using backticks (`) is called a template literal.
 
+  When writing a string with single quotes (' ' or " "), you have to use the plus sign to add variables. But in template literals, you can easily insert variables into the middle of the string using ${variable}.
 
---- 
-
-
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
-
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
-
-- Each card shows:
-  - Title
-  - Description
-  - Status
-  - Category
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on an issue  card will open a modal and show all the information about that Issue. 
-
-### 🚀 Challenges
-
-
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
-
-- Loading spinner on data load
-
-- Show active button on changing category names
-
-- Implement Search Functionality and 8 meaningful github commit.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
-
-
----
-
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
-
-
-## 📤 What to submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
-
+  Why is it used for: It is used to write multi-line strings and to easily input dynamic data or variables into the string.
 
