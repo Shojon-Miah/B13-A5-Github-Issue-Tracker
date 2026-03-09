@@ -19,6 +19,7 @@ async function loadIssues() {
 }
 loadIssues();
 
+
 // Render function 
 
 function renderIssues(issues) {
@@ -41,11 +42,11 @@ function renderIssues(issues) {
 
                 <p class ="text-gray-600 mt-1">${issue.description}</p>
             
-                <div class = flex gap-2 mt-3>${labelsHTML}</div>
+                <div class="flex gap-2 mt-3">${labelsHTML}</div>
 
                 <div class ="flex justify-between mt-4 text-sm text-gray-500">
                     <span>Author: ${issue.author}</span>
-                    span>Priority: ${issue.priority}</span>
+                    <span>Priority: ${issue.priority}</span>
                 </div>
 
             `;
@@ -53,6 +54,7 @@ function renderIssues(issues) {
         container.appendChild(card);
 
     });
+
 
 }
 
@@ -69,9 +71,8 @@ document.getElementById("tab-open").addEventListener("click", () => {
 });
 
 document.getElementById("tab-closed").addEventListener("click", () => {
-    const closedIssues = allIssues.filter(issue => issue.status === "open");
+    const closedIssues = allIssues.filter(issue => issue.status === "closed");
     renderIssues(closedIssues);
 });
-
 
 
