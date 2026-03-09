@@ -5,6 +5,24 @@
 // Dynamic Loading Issues and Card Render
 
 
+// global variable for all issues
+
+let allIssues = [];
+
+// API load
+
+async function loadIssues() {
+    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+    const result = await response.json();
+    console.log(result);
+
+    allIssues = result.data;
+
+}
+loadIssues();
+
+
+/*
 async function loadIssues () {
 
     try{
@@ -13,6 +31,7 @@ async function loadIssues () {
         // console.log(result);
         
         const issues = result.data;
+        //
         document.getElementById("issue-count").innerText = issues.length;
         const container = document.getElementById("issues-container");
 
@@ -24,7 +43,7 @@ async function loadIssues () {
             card.className = "border p-4 rounded-lg bg-white shadow";
             
             const labelsHTML = (issue.labels || [])
-            .map(label => `<span class ="text-xs bg-gray-200     px-2 py-1 rounded">${label}</span>`)
+            .map(label => `<span class ="text-xs bg-gray-200 px-2 py-1 rounded">${label}</span>`)
             .join("");
 
             card.innerHTML = `
@@ -57,3 +76,4 @@ async function loadIssues () {
 
 loadIssues();
 
+*/
