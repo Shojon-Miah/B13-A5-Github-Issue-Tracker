@@ -121,6 +121,37 @@
 
     </section>
 
+ <!-- Add Modal -->
+
+<dialog id="issue-modal" class="modal">
+
+    <div class="modal-box">
+        <h3 id="modal-title" class="text-lg font-bold mb-2"></h3>
+
+        <p id="modal-description" class="text-sm text-gray-600 mb-4"></p>
+
+        <div class="space-y-2 text-sm">
+
+            <p><strong>Status:</strong> <span id="modal-status"></span></p>
+            <p><strong>Author:</strong> <span id="modal-author"></span></p>
+            <p><strong>Priority:</strong> <span id="modal-priority"></span></p>
+            <p><strong>Created:</strong> <span id="modal-created"></span></p>
+            <p><strong>Assignee:</strong> <span id="modal-assignee"></span></p>
+
+        </div>
+
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">Close</button>
+            </form>
+        </div>        
+
+    </div>
+
+</dialog>
+
+    
+
     <script src="./scripts/issues.js"></script>
     <script src="./scripts/search.js"></script>
 
