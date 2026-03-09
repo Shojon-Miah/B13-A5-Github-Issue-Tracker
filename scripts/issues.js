@@ -31,25 +31,45 @@ function renderIssues(issues) {
     issues.forEach(issue => {
 
         const card = document.createElement("div");
-        card.className = "border p-4 rounded-lg bg-white shadow";
+        card.className = "border p-4 border-gray-200 rounded-lg bg-white shadow";
 
         const labelsHTML = (issue.labels || [])
             .map(label => `<span class ="text-xs bg-gray-200 px-2 py-1 rounded">${label}</span>`)
             .join("");
 
         card.innerHTML = `
-                <h3 class ="text-lg font-semibold">${issue.title}</h3>
 
-                <p class ="text-gray-600 mt-1">${issue.description}</p>
+            <div class ="border-t-4 ${issue.status === "open" ? "border-green-500" : "border-purple-500"} p-4">
             
-                <div class="flex gap-2 mt-3">${labelsHTML}</div>
+            <h3 class ="text-lg font-semibold mb-2">
+                ${issue.title}
+            </h3>
+                
+            <p class ="text-sm text-gray-600 mb-3">
+                ${issue.description}
+            </p>
 
-                <div class ="flex justify-between mt-4 text-sm text-gray-500">
-                    <span>Author: ${issue.author}</span>
-                    <span>Priority: ${issue.priority}</span>
-                </div>
+            <div class="flex flex-wrap gap-1 mb-3">
+                ${labelsHTML}
+            </div>
 
-            `;
+            <div class ="text-sm text-gray-500 space-y-1">
+
+                <p><span class ="font-medium">Status:</span> ${issue.status}</p>
+
+                <p><span class ="font-medium">Category:</span> ${issue.status}</p>
+
+                <p><span class ="font-medium">Author:</span> ${issue.author}</p>
+
+                <p><span class ="font-medium">Priority:</span> ${issue.priority}</p>
+
+                <p><span class ="font-medium">Created:</span> ${new Date(issue.createdAt).toLocaleDateString()}</p>    
+            
+            </div>
+
+            </div> 
+        
+        `;
 
         container.appendChild(card);
 
