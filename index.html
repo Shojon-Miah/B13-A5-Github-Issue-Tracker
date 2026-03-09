@@ -115,7 +115,8 @@
                 <span class="loading loading-spinner loading-lg text-primary"></span>
 
             </div>
-            
+
+
             <!-- Dynamic Issues Card Render-->
 
             <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -128,35 +129,61 @@
 
     </section>
 
+
     <!-- Add Modal -->
 
     <dialog id="issue-modal" class="modal">
 
         <div class="modal-box">
+
+            <!-- Title -->
             <h3 id="modal-title" class="text-lg font-bold mb-2"></h3>
 
-            <p id="modal-description" class="text-sm text-gray-600 mb-4"></p>
+            <!-- Status Row -->
+            <div class="flex items-center gap-3 text-sm mb-3">
 
-            <div class="space-y-2 text-sm">
+                <button class="btn btn-primary btn-xs">
+                    Open
+                </button>
 
-                <p><strong>Status:</strong> <span id="modal-status"></span></p>
-                <p><strong>Author:</strong> <span id="modal-author"></span></p>
-                <p><strong>Priority:</strong> <span id="modal-priority"></span></p>
-                <p><strong>Created:</strong> <span id="modal-created"></span></p>
-                <p><strong>Assignee:</strong> <span id="modal-assignee"></span></p>
+                <p>
+                    Opened by <span id="modal-author"></span>
+                </p>
+
+                <p id="modal-created"></p>
+
+            </div>
+
+            <!-- Description -->
+            <p id="modal-description" class="text-sm text-gray-600 mb-3"></p>
+
+            <!-- Labels -->
+            <div id="modal-labels" class="flex gap-2 mb-3"></div>
+
+            <!-- Assignee + Priority -->
+            <div class="flex gap-6 text-sm mb-4">
+
+                <p>
+                    <strong>Assignee:</strong>
+                    <span id="modal-assignee"></span>
+                </p>
+
+                <p>
+                    <strong>Priority:</strong>
+                    <span id="modal-priority"></span>
+                </p>
 
             </div>
 
             <div class="modal-action">
                 <form method="dialog">
-                    <button class="btn">Close</button>
+                    <button class="btn btn-primary">Close</button>
                 </form>
             </div>
 
         </div>
 
     </dialog>
-
 
 
     <script src="./scripts/issues.js"></script>
