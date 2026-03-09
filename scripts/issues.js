@@ -75,10 +75,16 @@ function renderIssues(issues) {
         
         `;
 
+        // Modal card click event
+        card.addEventListener("click", () => {
+
+            openIssueModal(issue);
+
+        });
+
         container.appendChild(card);
 
     });
-
 
 }
 
@@ -126,5 +132,30 @@ document.getElementById("tab-closed").addEventListener("click", () => {
     renderIssues(closedIssues);
     setActiveTab("tab-closed"); 
 });
+
+
+// Modal open function
+
+function openIssueModal (issue){
+
+    document.getElementById("modal-title").innerText = issue.title;
+
+    document.getElementById("modal-description").innerText = issue.description;
+
+    document.getElementById("modal-status").innerText = issue.status;
+
+    document.getElementById("modal-author").innerText = issue.author;
+
+    document.getElementById("modal-priority").innerText = issue.priority;
+
+    document.getElementById("modal-created").innerText = new Date(issue.createdAt).toLocaleString();
+
+    document.getElementById("modal-assignee").innerText = issue.assignee || "Unassigned";
+
+    document.getElementById("issue-modal").showModal();
+
+}
+
+
 
 
